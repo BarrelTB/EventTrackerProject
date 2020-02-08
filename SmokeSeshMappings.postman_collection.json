@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "402b9297-883a-4f8f-a046-6191b4bbe349",
+		"name": "SmokeSeshMappings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Strain List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/api/strains",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"strains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sesh List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/api/sessions",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Sesh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/api/sessions/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"sessions",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Strain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8083/api/strains/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"strains",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Strain Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Calebs Strain\",\n    \"desc\": \"The best of the best\",\n    \"thcPercentage\": 22,\n    \"cbdPercentage\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/api/strains",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"strains"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sesh Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The One, NEO\",\n    \"timeLength\": \"I can bend Time\",\n    \"desc\": \"Dodging Bullets!\",\n    \"strain\": {\n        \"id\": 2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/api/sessions",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Strain Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8083/api/strains/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"strains",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sesh Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8083/api/sessions/13",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"sessions",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Strain Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Calebs Strain\",\n    \"desc\": \"The best of the best of the best\",\n    \"thcPercentage\": 19,\n    \"cbdPercentage\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/api/strains/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"strains",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sesh Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The One, NEO\",\n    \"timeLength\": \"I can bend Space and Time\",\n    \"desc\": \"Dodging Bullets!\",\n    \"strain\": {\n        \"id\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/api/sessions/13",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"sessions",
+						"13"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -20,6 +20,7 @@ public class Sesh {
 	@Column(name = "time_length")
 	private String timeLength;
 
+	@Column(name = "description")
 	private String desc;
 
 	@ManyToOne

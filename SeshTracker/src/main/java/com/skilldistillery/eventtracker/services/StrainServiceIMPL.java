@@ -1,11 +1,13 @@
 package com.skilldistillery.eventtracker.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.eventtracker.entities.Sesh;
 import com.skilldistillery.eventtracker.entities.Strain;
 import com.skilldistillery.eventtracker.repositories.StrainRepository;
 
@@ -33,6 +35,7 @@ public class StrainServiceIMPL implements StrainService {
 	
 	@Override
 	public Strain createStrain(Strain strain) {
+		
 		repo.saveAndFlush(strain);
 		return strain;
 	}

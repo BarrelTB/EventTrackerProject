@@ -78,10 +78,10 @@ public class SeshController {
 
 	}
 	
-	@DeleteMapping("strains/{stid}/sessions/{sid}")
-	public void delete(@PathVariable int stid, @PathVariable int sid, HttpServletRequest request, HttpServletResponse response) {
+	@DeleteMapping("sessions/{sid}")
+	public void delete(@PathVariable int sid, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			svc.deleteSesh(sid, stid);
+			svc.deleteSesh(sid);
 			response.setStatus(204);
 
 		} catch (Exception e) {

@@ -20,15 +20,16 @@ public class Strain {
 
 	private String name;
 
+	@Column(name = "description")
 	private String desc;
 
 	@Column(name = "thc_percentage")
-	private int thcPercentage;
+	private Integer thcPercentage;
 
 	@Column(name = "cbd_percentage")
-	private int cbdPercentage;
+	private Integer cbdPercentage;
 
-	@OneToMany
+	@OneToMany(mappedBy = "strain")
 	@JsonIgnore
 	private List<Sesh> sessions;
 
@@ -36,7 +37,7 @@ public class Strain {
 		super();
 	}
 
-	public Strain(String name, String desc, int thcPercentage, int cbdPercentage, List<Sesh> sessions) {
+	public Strain(String name, String desc, Integer thcPercentage, Integer cbdPercentage, List<Sesh> sessions) {
 		super();
 		this.name = name;
 		this.desc = desc;
@@ -69,19 +70,19 @@ public class Strain {
 		this.desc = desc;
 	}
 
-	public int getThcPercentage() {
+	public Integer getThcPercentage() {
 		return thcPercentage;
 	}
 
-	public void setThcPercentage(int thcPercentage) {
+	public void setThcPercentage(Integer thcPercentage) {
 		this.thcPercentage = thcPercentage;
 	}
 
-	public int getCbdPercentage() {
+	public Integer getCbdPercentage() {
 		return cbdPercentage;
 	}
 
-	public void setCbdPercentage(int cbdPercentage) {
+	public void setCbdPercentage(Integer cbdPercentage) {
 		this.cbdPercentage = cbdPercentage;
 	}
 

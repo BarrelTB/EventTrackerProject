@@ -8,12 +8,15 @@ public interface SeshService {
 
 	Sesh updateSesh(int seshId, Sesh sesh);
 
-	boolean deleteSesh(int sid, int stid);
 
-	Sesh createSesh(Sesh sesh);
 
 	Sesh seshById(int id);
 
 	List<Sesh> listSessions();
+
+
+	Sesh createSesh(Sesh sesh);
+
+	boolean deleteSesh(int sid);
 
 }

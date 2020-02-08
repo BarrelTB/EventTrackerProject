@@ -7,13 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.eventtracker.entities.Sesh;
+import com.skilldistillery.eventtracker.entities.Strain;
 import com.skilldistillery.eventtracker.repositories.SeshRepository;
+import com.skilldistillery.eventtracker.repositories.StrainRepository;
 
 @Service
 public class SeshServiceIMPL implements SeshService {
 	
 	@Autowired
 	private SeshRepository repo;
+	@Autowired
+	private StrainRepository repoStrain;
 	
 	@Override
 	public List<Sesh> listSessions() {
@@ -33,17 +37,31 @@ public class SeshServiceIMPL implements SeshService {
 	
 	@Override
 	public Sesh createSesh(Sesh sesh) {
+		
+		Optional<Strain> strainOpt = repoStrain.findById(sesh.getStrain().getId());
+		Strain strain = strainOpt.get();
+		
+		sesh.setStrain(strain);
+		
 		repo.saveAndFlush(sesh);
 		return sesh;
 	}
 	
 	@Override
-	public boolean deleteSesh(int sid, int stid) {
+	public boolean deleteSesh(int sid) {
 		Optional<Sesh> seshOpt = repo.findById(sid);
 		Sesh sesh = seshOpt.get();
 		
-		if (repo.findById(sid).isPresent() && (sesh.getStrain().getId() == stid)) {
+		if (repo.findById(sid).isPresent()) {
 			repo.deleteById(sid);
+			
+			
+			Optional<Strain> strainOpt = repoStrain.findById(sesh.getStrain().getId());
+			Strain strain = strainOpt.get();
+			if (strain.getSessions().contains(sesh)) {
+				strain.getSessions().remove(sesh);	
+			}
+			
 			return true;
 		} else {
 			return false;
@@ -53,6 +71,12 @@ public class SeshServiceIMPL implements SeshService {
 	
 	@Override
 	public Sesh updateSesh(int seshId, Sesh sesh) {
+		
+		Optional<Strain> strainOpt = repoStrain.findById(sesh.getStrain().getId());
+		Strain strain = strainOpt.get();
+		
+		sesh.setStrain(strain);
+		
 		Optional<Sesh> seshOpt = repo.findById(seshId);
 
 		if (seshOpt.isPresent()) {
