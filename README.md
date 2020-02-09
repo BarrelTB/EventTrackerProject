@@ -25,6 +25,10 @@ The user is able to create, update, delete, and read both strains and sessions. 
 | `Strain`        |`PUT api/sessions/{id}`   | Replaces an existing sesh by id|
 | `Boolean`     |`DELETE api/sessions/{id}`| Deletes an existing sesh by id |
 
+
+
+- To import Postman mappings : SmokeSeshMappings.postman_collection.json is located above
+
 ### Technologies used
 - Spring Tool Suite (eclipse)
 - Spring Boot
