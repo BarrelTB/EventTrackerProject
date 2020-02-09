@@ -35,4 +35,4 @@ The task was to think of an event tracking application. I came up with the idea 
 
 ### Lessons Learned
 - desc is a MySql reserved word (check for sql reserved words during database building)
-- Better understanding how how to implement RESTful services
+- Better understanding how to implement RESTful services
