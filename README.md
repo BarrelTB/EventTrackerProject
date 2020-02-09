@@ -27,7 +27,7 @@ The user is able to create, update, delete, and read both strains and sessions. 
 
 
 
-- To import Postman mappings : SmokeSeshMappings.postman_collection.json is located above
+- To import Postman mappings : [Smoke Sesh Mappings](https://github.com/BarrelTB/EventTrackerProject/blob/master/SmokeSeshMappings.postman_collection.json)
 
 ### Technologies used
 - Spring Tool Suite (eclipse)
