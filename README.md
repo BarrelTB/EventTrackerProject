@@ -10,6 +10,8 @@ The task was to think of an event tracking application. I came up with the idea 
 
 The user is able to create, update, delete, and read both strains and sessions. The idea being that the user creates their own database of smoke/strain memories to rely on for later purchases of marijuana as opposed to using the big databases which show generic data about the various strains that are available. Various marijuana strains affect people in different ways, so trying to find new strains based on big lab data is generally unreliable. Future implementation of this application would allow a user to connect with fellow users, finding those that lean towards the same strains to then get a better idea of how they would respond and feel on a new strain.
 
+When hitting the main page a table will be populated via javascript with information from the database, as well as a create form will be generated. Below the table it will display the total time spent smoking (a rough estimation, as the site allows for a bit of comedy). Clicking on a row will take you to the details for a certain sesh where the user will be able to edit or delete a sesh if they so decide. After an edit or delete the javascript will hide the edit/delete div and the detail div, then re-display the newly updated table along with the create form.
+
 ### Rest API Endpoints
 
 | Return Type | Route                 | Functionality                  |
